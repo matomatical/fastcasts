@@ -1,7 +1,26 @@
 [iProcrastinate]
-url   = "https://iprocrastinate.libsyn.com/rss"
-path  = "/Users/matt/podcasts/iprocrastinate"
+url     = "https://iprocrastinate.libsyn.com/rss"
+path    = "/Users/matt/nexus/library/podcasts/iprocrastinate"
 
 [alignment-newsletter]
-url   = "https://alignment-newsletter.libsyn.com/rss"
-path  = "/Users/matt/podcasts/alignment-newsletter"
+url     = "https://alignment-newsletter.libsyn.com/rss"
+path    = "/Users/matt/nexus/library/podcasts/alignment-newsletter"
+
+
+
+
+# german (archived)
+# TODO: format without date because the dates are uninformative and the
+# chapter numbers are usable (for this podcast)
+[deutsch-warum-nicht-1]
+url     = "https://rss.dw.com/xml/DKpodcast_dwn1_en"
+path    = "/Users/matt/nexus/library/courses/lang/de/Deutsch, warum nicht?/Series 1"
+[deutsch-warum-nicht-2]
+url     = "https://rss.dw.com/xml/DKpodcast_dwn2_en"
+path    = "/Users/matt/nexus/library/courses/lang/de/Deutsch, warum nicht?/Series 2"
+[deutsch-warum-nicht-3]
+url     = "https://rss.dw.com/xml/DKpodcast_dwn3_en"
+path    = "/Users/matt/nexus/library/courses/lang/de/Deutsch, warum nicht?/Series 3"
+[deutsch-warum-nicht-4]
+url     = "https://rss.dw.com/xml/DKpodcast_dwn4_en"
+path    = "/Users/matt/nexus/library/courses/lang/de/Deutsch, warum nicht?/Series 4"

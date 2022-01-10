@@ -27,7 +27,7 @@ def update_feed(feed_id, url, path):
     os.makedirs(path, exist_ok=True)
 
     # download rss file
-    print(" downloading rss file")
+    print(" downloading rss file from", url)
     rss_path = os.path.join(path, "rss.xml")
     download_rss(url, rss_path)
 
@@ -40,20 +40,19 @@ def update_feed(feed_id, url, path):
     episodes = rss_feed['episodes']
     print(" found", len(episodes), "episodes")
     for episode in episodes[::-1]:
-        try:
+        # try:
             download_episode(episode, path)
-        except:
-            with open("errors.log", 'a') as f:
-                print("ERROR", episode, file=f, flush=True)
-                print("ERROR", episode, file=sys.stderr)
-                # TODO: handle errors better (a summary at the end of
-                # update, for example?)
+        # except:
+        #     with open("errors.log", 'a') as f:
+        #         print("ERROR", episode, file=f, flush=True)
+        #         print("ERROR", episode, file=sys.stderr)
+        #         # TODO: handle errors better (a summary at the end of
+        #         # update, for example?)
 
-    print("finished with", feed_id)
+    print("", feed_id, "up to date")
 
 
 def download_rss(url, path):
-    print("downloading rss from", url)
     r = requests.get(url)
     r.raise_for_status()
     # (save rss file?)
@@ -71,16 +70,21 @@ def download_episode(episode, folder_path):
     # others: subtitle, description
 
     # episode file
-    file = episode['enclosures'][0]; assert len(episode['enclosures']) == 1
+    if episode['enclosures'] == []:
+        tqdm.tqdm.write("WARNING: Missing episode file!")
+        return
+    if len(episode['enclosures']) > 1:
+        tqdm.tqdm.write("WARNING: Multiple episode files! (taking first)")
+    file = episode['enclosures'][0];
     mimetype = file['mime_type']
     file_url = file['url']
     file_size = file['file_size']
 
     # compute destination path
-    basename = "{yyyymmdd}-{episode_title}{dot_ext}".format(
+    basename = "{yyyymmdd}-{episode_title}.{extension}".format(
             episode_title=sani.sanitize_path_fragment(title),
             yyyymmdd=pubdate.strftime("%Y-%m-%d"),
-            dot_ext=mimetypes.guess_extension(mimetype),
+            extension=guess_extension(mimetype),
         )
     path = os.path.join(folder_path, basename)
 
@@ -89,7 +93,7 @@ def download_episode(episode, folder_path):
         print(" downloading", basename)
         progress = tqdm.tqdm(
                 total=file_size,
-                unit="B",
+                unit="iB",
                 unit_scale=True,
                 unit_divisor=1024,
                 leave=False,
@@ -98,12 +102,21 @@ def download_episode(episode, folder_path):
             )
         with requests.get(file_url, stream=True) as r:
             with open(path, 'wb') as f:
-                for chunk in r.iter_content(chunk_size=128*1024):
-                    progress.update(CHUNK_SIZE)
+                for chunk in r.iter_content(chunk_size=1024*128):
+                    progress.update(1024*128)
                     f.write(chunk)
         progress.close()
 
-CHUNK_SIZE = 128*1024
+# # #
+# Translating mimetypes
+# 
+mimetypes.add_type("audio/x-m4a", ".m4a", strict=False)
+def guess_extension(mimetype):
+    dot_ext = mimetypes.guess_extension(mimetype, strict=False)
+    if dot_ext is not None:
+        return dot_ext[1:] # without dot
+    tqdm.tqdm.write(f"WARNING: unknown mime-type {mimetype!r}! (using mp3)")
+    return "mp3"
 
 
 if __name__ == "__main__":
