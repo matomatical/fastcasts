@@ -1,26 +1,51 @@
+# TODO:
+# * FLI podcast(s) (can I find them split into different types?)
+#   (yes but somehow with no RSS?)
+#   * https://futureoflife.org/ai-alignment-podcast/
+#   * https://futureoflife.org/notcool/
+#   * https://futureoflife.org/the-future-of-life-podcast/
+# * see the rest of the podcasts on phone
+# * sync again to phone
+
 [iProcrastinate]
 url     = "https://iprocrastinate.libsyn.com/rss"
-path    = "/Users/matt/nexus/library/podcasts/iprocrastinate"
+path    = "/Users/matt/storage/library/podcasts/iprocrastinate"
+# note: might be good to add some sort of filter that converts m4a to
+# audio-only?
 
 [alignment-newsletter]
 url     = "https://alignment-newsletter.libsyn.com/rss"
-path    = "/Users/matt/nexus/library/podcasts/alignment-newsletter"
+path    = "/Users/matt/storage/library/podcasts/alignment-newsletter"
 
+[philosopher-and-news]
+url     = "https://feeds.buzzsprout.com/1577503.rss"
+path    = "/Users/matt/storage/library/podcasts/philosopher-and-news"
 
+[philosophize-this]
+url     = "http://philosophizethis.libsyn.com/rss"
+path    = "/Users/matt/storage/library/podcasts/philosophize-this"
+# has good episode numbers: remove dates!
 
+[econ-talk]
+url     = "https://feeds.simplecast.com/wgl4xEgL"
+path    = "/Users/matt/storage/library/podcasts/econ-talk"
+
+[notrelated]
+url     = "https://notrelated.xyz/rss"
+path    = "/Users/matt/storage/library/podcasts/notrelated"
 
 # german (archived)
 # TODO: format without date because the dates are uninformative and the
 # chapter numbers are usable (for this podcast)
 [deutsch-warum-nicht-1]
 url     = "https://rss.dw.com/xml/DKpodcast_dwn1_en"
-path    = "/Users/matt/nexus/library/courses/lang/de/Deutsch, warum nicht?/Series 1"
+path    = "/Users/matt/storage/library/courses/lang/de/Deutsch, warum nicht?/Series 1"
 [deutsch-warum-nicht-2]
 url     = "https://rss.dw.com/xml/DKpodcast_dwn2_en"
-path    = "/Users/matt/nexus/library/courses/lang/de/Deutsch, warum nicht?/Series 2"
+path    = "/Users/matt/storage/library/courses/lang/de/Deutsch, warum nicht?/Series 2"
 [deutsch-warum-nicht-3]
 url     = "https://rss.dw.com/xml/DKpodcast_dwn3_en"
-path    = "/Users/matt/nexus/library/courses/lang/de/Deutsch, warum nicht?/Series 3"
+path    = "/Users/matt/storage/library/courses/lang/de/Deutsch, warum nicht?/Series 3"
 [deutsch-warum-nicht-4]
 url     = "https://rss.dw.com/xml/DKpodcast_dwn4_en"
-path    = "/Users/matt/nexus/library/courses/lang/de/Deutsch, warum nicht?/Series 4"
+path    = "/Users/matt/storage/library/courses/lang/de/Deutsch, warum nicht?/Series 4"
