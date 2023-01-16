@@ -1,11 +1,22 @@
-# TODO:
+# TRY LATER:
+# * see the rest of the podcasts on phone
+# * tyler cowan's blog/podcast, recommend by dan
 # * FLI podcast(s) (can I find them split into different types?)
 #   (yes but somehow with no RSS?)
 #   * https://futureoflife.org/ai-alignment-podcast/
 #   * https://futureoflife.org/notcool/
 #   * https://futureoflife.org/the-future-of-life-podcast/
-# * see the rest of the podcasts on phone
-# * sync again to phone
+# * clearer thinking spencer greenberg clearerthinkingpodcast.com/rss.xml
+# * 80kh podcast
+# * toby buckle's political philosophy podcast
+
+[ezra-klein]
+url     = "https://feeds.simplecast.com/82FI35Px"
+path    = "/Users/matt/storage/library/podcasts/ezra-klein"
+
+[hello-phd]
+url     = "http://hellophd.com/feed/podcast/"
+path    = "/Users/matt/storage/library/podcasts/hello-phd"
 
 [iProcrastinate]
 url     = "https://iprocrastinate.libsyn.com/rss"
@@ -30,9 +41,46 @@ path    = "/Users/matt/storage/library/podcasts/philosophize-this"
 url     = "https://feeds.simplecast.com/wgl4xEgL"
 path    = "/Users/matt/storage/library/podcasts/econ-talk"
 
+[econ-detective]
+url     = "https://economicsdetective.libsyn.com/rss"
+path    = "/Users/matt/storage/library/podcasts/econ-talk"
+
 [notrelated]
 url     = "https://notrelated.xyz/rss"
 path    = "/Users/matt/storage/library/podcasts/notrelated"
+
+[history-egypt]
+url     = "https://rss.acast.com/egyptianhistorypodcast"
+path    = "/Users/matt/storage/library/podcasts/history-egypt"
+
+[history-japan]
+url     = "https://historyofjapan.libsyn.com/rss"
+path    = "/Users/matt/storage/library/podcasts/history-japan"
+
+[history-china]
+url     = "https://feeds.feedburner.com/TheHistoryOfChina"
+path    = "/Users/matt/storage/library/podcasts/history-china"
+
+[history-rome]
+url     = "https://feeds.feedburner.com/TheHistoryOfRome"
+path    = "/Users/matt/storage/library/podcasts/history-rome"
+
+[history-philosophy-wag]
+url     = "https://hopwag.podbean.com/feed.xml"
+path    = "/Users/matt/storage/library/podcasts/history-philosophy-wag"
+
+[history-philosophy-wag2]
+url     = "https://hopwag2.podbean.com/feed.xml"
+path    = "/Users/matt/storage/library/podcasts/history-philosophy-wag2"
+
+[history-prehistory]
+url     = "https://anchor.fm/s/3a47252c/podcast/rss"
+path    = "/Users/matt/storage/library/podcasts/history-prehistory"
+
+[philosophy-locke-lectures]
+url     = "http://mediapub.it.ox.ac.uk/feeds/128994/audio.xml"
+path    = "/Users/matt/storage/library/podcasts/philosophy-locke-lectures"
+
 
 # german (archived)
 # TODO: format without date because the dates are uninformative and the

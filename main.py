@@ -1,3 +1,5 @@
+#!python3
+
 import io
 import os
 import sys
@@ -10,9 +12,12 @@ import podcastparser
 import tqdm
 import filename_sanitizer as sani
 
+CONFIG_PATH = "/Users/matt/quests/feed/feeds.toml"
+
+
 def main():
     # load config
-    with open("feeds.toml") as config_file:
+    with open(CONFIG_PATH) as config_file:
         config = toml.load(config_file)
 
     # process each feed
