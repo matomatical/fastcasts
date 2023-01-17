@@ -1,3 +1,5 @@
-feedparser
-pycurl
 rtoml
+podcastparser
+tqdm
+filename_sanitizer
+pycurl
