@@ -73,12 +73,12 @@ def download_episode(episode, folder_path):
             )
         with requests.get(file_url, stream=True) as r:
             ffmpeg_proc = subprocess.Popen(["ffmpeg",
-                    # "-i", "pipe:0",             # input from the pipe
+                    "-i", "pipe:",              # input from the pipe
                     "-filter:a",                # audio
                     "atempo=2",                 # speed x2 (-vn?)
                     "-vn",                      # remove video stream?
                     "-acodec", "libmp3lame",    # to mp3
-                    # "-c:a", "libfdk_aac",       # use apple silicon?
+                    # "-c:a", "libfdk_aac",     # use apple silicon?
                     path                        # episode name for output?
                 ], stdin=subprocess.PIPE)
             for chunk in response.iter_content(chunk_size=1024*128):

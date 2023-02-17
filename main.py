@@ -12,7 +12,7 @@ import podcastparser
 import tqdm
 import filename_sanitizer as sani
 
-CONFIG_PATH = "/Users/matt/quests/feed/feeds.toml"
+CONFIG_PATH = "/Users/matt/.feeds"
 
 
 def main():

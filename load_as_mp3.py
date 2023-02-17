@@ -7,10 +7,11 @@ DST_DIR = "/Volumes/Harmony/podcasts/"
 
 def convert_to_mp3(src_path, dst_path):
     dst_path = os.path.splitext(dst_path)[0] + ".mp3"
+    print(src_path)
     if os.path.exists(dst_path):
-        print("skipping", src_path)
+        print("skipping")
     else:
-        ffmpeg = subprocess.run(["ffmpeg-bar",
+        ffmpeg = subprocess.run(["ffmpeg",
                 "-i", src_path,
                 "-filter:a",                # audio
                 "atempo=2",                 # speed x2 (-vn?)
