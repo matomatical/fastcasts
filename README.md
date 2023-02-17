@@ -3,6 +3,8 @@ Feed
 
 A simple RSS downloader for podcasts, inspired by castget.
 
+TODO: Complete rewrite
+
 Requirements
 ------------
 
