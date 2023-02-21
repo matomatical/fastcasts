@@ -1,0 +1,52 @@
+[misc]
+
+# not-related           = "https://notrelated.xyz/rss"
+ezra-klein            = "https://feeds.simplecast.com/82FI35Px"
+# jordan-b-peterson     = "https://feeds.simplecast.com/vsy1m5LV"
+
+[rationalist]
+
+# clearer-thinking      = "https://clearerthinkingpodcast.com/rss.xml"
+# 80kh                  = "https://pcr.apple.com/id1245002988"
+# sam-harris            = "https://wakingup.libsyn.com/rss"
+
+[economics]
+
+econ-detective        = "https://economicsdetective.libsyn.com/rss"
+# econtalk              = "https://feeds.simplecast.com/wgl4xEgL"
+# tyler-cowen           = "http://cowenconvos.libsyn.com/rss"
+
+[history]
+
+fall-of-civilisations = "https://feeds.soundcloud.com/users/soundcloud:users:572119410/sounds.rss"
+# egypt                 = "https://rss.acast.com/egyptianhistorypodcast"
+# japan                 = "https://historyofjapan.libsyn.com/rss"
+# china                 = "https://feeds.feedburner.com/TheHistoryOfChina"
+# rome                  = "https://feeds.feedburner.com/TheHistoryOfRome"
+philosophy-wag        = "https://hopwag.podbean.com/feed.xml"
+philosophy-wag2       = "https://hopwag2.podbean.com/feed.xml"
+# prehistory            = "https://anchor.fm/s/3a47252c/podcast/rss"
+
+[research]
+
+# hello-phd             = "http://hellophd.com/feed/podcast/"
+# alignment-newsletter  = "https://alignment-newsletter.libsyn.com/rss"
+
+[know-thyself]
+
+# iProcrastinate        = "https://iprocrastinate.libsyn.com/rss"
+
+[philosophy]
+
+philosopher-and-news  = "https://feeds.buzzsprout.com/1577503.rss"
+# philosophize-this     = "http://philosophizethis.libsyn.com/rss"
+# locke-lectures        = "http://mediapub.it.ox.ac.uk/feeds/128994/audio.xml"
+political-philosophy  = "https://feeds.soundcloud.com/users/soundcloud:users:409143168/sounds.rss"
+
+[german]
+
+# deutsch-warum-nicht-1 = "https://rss.dw.com/xml/DKpodcast_dwn1_en"
+# deutsch-warum-nicht-2 = "https://rss.dw.com/xml/DKpodcast_dwn2_en"
+# deutsch-warum-nicht-3 = "https://rss.dw.com/xml/DKpodcast_dwn3_en"
+# deutsch-warum-nicht-4 = "https://rss.dw.com/xml/DKpodcast_dwn4_en"
+
