@@ -1,5 +1,5 @@
-Feed
-====
+Fastcasts
+=========
 
 A simple RSS downloader for podcasts, designed to load the files onto my mp3
 player.
