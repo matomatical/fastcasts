@@ -1,56 +1,86 @@
 Feed
 ====
 
-A simple RSS downloader for podcasts, inspired by castget.
+A simple RSS downloader for podcasts, designed to load the files onto my mp3
+player.
 
-TODO: Complete rewrite
+Features
 
-Requirements
+* configure rss feeds via TOML
+* converts all to mp3 while downloading
+* converts all to 2x speed while downloading
+
+Installation
 ------------
 
-Install dependencies:
+Install Python dependencies (`pip install` the following)
 
-* `pip install rtoml`
-  a fast rust-based toml parser for reading config files
-* some downloader... apparently libcurl is faster than `requests` but I can't
-  get it to work yet! So `pip install requests`
-* `pip install podcastparser`
+* `tomli` a minimal TOML parser (TODO: migrate to python 3.11 `tomllib`)
+* `tqdm` for pretty CLI progress bars
+* `requests` URL downloader
+* `podcastparser` to parse RSS feeds
+* `filename_sanitizer` to convert titles to permissible path fragments
+
+Install other dependencies (see your package manager):
+
+* `ffmpeg` to convert to mp3 and speed up the files
+
+Optional:
+
+* Make the script executable and add it to your path so you can sync podcasts
+  from anywhere.
 
 Configuration
 -------------
 
-In a home-directory file `~/.config/feed.conf`:
+List RSS feeds:
 
-```
-# some id for each feed
-[some_id]
-url       = "some.example.com/rss"
-path      = "Users/matt/podcasts/{id}"
-filename  = "{id}-{date}-{title}.{ext}"
+* Put somewhere a toml file containing a list of categories and within the
+  categories various podcasts:
 
-# more feeds below
-```
+  ```toml
+  [economics]
 
-This configuration format from castget is really neat and I think it's worth
-sharing with my other project 'mess'. Also, is this just TOML? Castget uses
-a format with no strings so it's a bit different. Also, what kind of filename
-and path fields can be automatically populated? How about:
+  econtalk              = "https://feeds.simplecast.com/wgl4xEgL"
 
-* `{id}` for the id of the podcast (in this case `some_id`).
-* `{date}` for the date of the episode (in the format `YYYY-MM-DD` for
-  sorting).
-* `{title}` for the title of the episode.
-* `{index}` for the index of the episode within the RSS feed (this is not
-  necessarily the same as the episode number if the podcast uses those).
-* `{filename}` for the filename of the podcast (not including the extension).
-* `{ext}` for the filename extension from the filename of the podcast.
-  Actually, maybe this should be automatically added, because I can't see a
-  reason why not to keep the filename **all cases.**
+  [philosophy]
 
-These are Python format-strings so you can do `{` as `{{` etc.
+  philosopher-and-news  = "https://feeds.buzzsprout.com/1577503.rss"
+  
+  [misc]
+
+  not-related           = "https://notrelated.xyz/rss"
+  ezra-klein            = "https://feeds.simplecast.com/82FI35Px"
+  ```
+
+  At the moment it's a hard requirement that the URLs are at depth 3 in the
+  TOML---it must always be **category.podcast: rss_url**.
+  For example, the following will break the script:
+
+  ```toml
+  uncategorized-podcast = "https://example.com/rss"
+  too.deeply.nested     = "https://example.com/rss"
+  [also-too.deeply]
+  nested                = "https://example.com/rss"
+  ```
+
+Configure the script:
+
+* Point the `RSS_LIST` variable at your toml file
+* Point the `ROOT_PATH` variable at where you want the podcast folders to be
+  created.
 
 Usage
 -----
 
-From anywhere, run a simple command like `feed` and all podcasts will be
-updated.
+Just call the script and wait for it to download/convert all of the episodes.
+
+Development
+-----------
+
+TODO:
+
+* test this with non-mp3 files
+* make the filename generation more configurable (not always "date-title.mp3")
+* make the speedup and formatting configurable? or at least optional? so that
+  you can use without ffmpeg if you want
