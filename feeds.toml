@@ -1,3 +1,7 @@
+[know-thyself]
+
+# iProcrastinate        = "https://iprocrastinate.libsyn.com/rss"
+
 [misc]
 
 # not-related           = "https://notrelated.xyz/rss"
@@ -31,10 +35,6 @@ philosophy-wag2       = "https://hopwag2.podbean.com/feed.xml"
 
 # hello-phd             = "http://hellophd.com/feed/podcast/"
 # alignment-newsletter  = "https://alignment-newsletter.libsyn.com/rss"
-
-[know-thyself]
-
-# iProcrastinate        = "https://iprocrastinate.libsyn.com/rss"
 
 [philosophy]
 

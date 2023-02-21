@@ -7,8 +7,10 @@ player.
 Features
 
 * configure rss feeds via TOML
-* converts all to mp3 while downloading
-* converts all to 2x speed while downloading
+* converts all formats to mp3 while downloading (this is what fits on my mp3
+  player)
+* converts all formats to 2x speed while downloading (the player has limited
+  speed control)
 
 Installation
 ------------
@@ -53,16 +55,16 @@ List RSS feeds:
   ezra-klein            = "https://feeds.simplecast.com/82FI35Px"
   ```
 
-  At the moment it's a hard requirement that the URLs are at depth 3 in the
-  TOML---it must always be **category.podcast: rss_url**.
-  For example, the following will break the script:
+  In the example all the URLs are at depth 3 (there is a category key and a
+  podcast title key and then the URL), but this is not a hard requirement.
+  The script will create folders mirroring the TOML table (dictionary)
+  structure and I guess it can go arbitrarily deep.
 
-  ```toml
-  uncategorized-podcast = "https://example.com/rss"
-  too.deeply.nested     = "https://example.com/rss"
-  [also-too.deeply]
-  nested                = "https://example.com/rss"
-  ```
+* It's just a TOML file so you can for example comment out podcasts you don't
+  want to sync every single time (for example if they are no lonher expected
+  to be updated or you're just not listening to them at the moment)
+
+My example is included in the repo.
 
 Configure the script:
 
@@ -75,12 +77,18 @@ Usage
 
 Just call the script and wait for it to download/convert all of the episodes.
 
+Let me know if any issues.
+
 Development
 -----------
 
 TODO:
 
-* test this with non-mp3 files
+* add better error handling so that if something goes wrong with (1)
+  downloading or (2) ffmpeg or (3) OS I can tell which, and have useful
+  information such as the ffmpeg error, the url, the path, etc.
+
 * make the filename generation more configurable (not always "date-title.mp3")
-* make the speedup and formatting configurable? or at least optional? so that
-  you can use without ffmpeg if you want
+
+* make the speedup and mp3-formatting configurable? or at least optional? so
+  that you can use without ffmpeg if you want a simple podcast downloader
